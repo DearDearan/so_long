@@ -73,7 +73,7 @@ You will get a program named "so_long". You can start the game by putting in you
 ```
 
 
-# Ressources
+# Resources
 
 Here's the program i used for all my sprites :
 

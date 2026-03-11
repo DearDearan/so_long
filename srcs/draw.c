@@ -6,11 +6,12 @@
 /*   By: lifranco <lifranco@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/15 00:43:41 by lifranco          #+#    #+#             */
-/*   Updated: 2026/03/10 16:11:37 by lifranco         ###   ########.fr       */
+/*   Updated: 2026/03/11 17:53:35 by lifranco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
+#include <stdlib.h>
 
 static int	get_pixel(char *addr, int *info, int x, int y)
 {
@@ -25,6 +26,12 @@ void	draw_sprite(t_game *game, void *txtr, int dx, int dy)
 	unsigned int	color;
 
 	src = mlx_get_data_addr(txtr, &info[0], &info[1], &info[2]);
+	if (!src)
+	{
+		ft_fdprintf(2, "Error\nCouldn't reach address\n");
+		closewin(game);
+		exit(1);
+	}
 	pos[1] = 0;
 	while (pos[1] < T_SIZE)
 	{

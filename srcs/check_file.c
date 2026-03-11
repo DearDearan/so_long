@@ -6,7 +6,7 @@
 /*   By: lifranco <lifranco@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/09 23:46:38 by lifranco          #+#    #+#             */
-/*   Updated: 2026/03/10 14:58:41 by lifranco         ###   ########.fr       */
+/*   Updated: 2026/03/11 17:53:29 by lifranco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,28 +106,28 @@ int	check_file_length(char **map)
 
 int	check_valid(char **map, int height)
 {
+	int	fill_res;
+
 	if (check_player(map) != 1)
 	{
 		ft_fdprintf(2, "Error\nToo Many Players / No Players Online.\n");
 		return (1);
 	}
-	else if (check_invalid_char(map) == 1)
+	if (check_invalid_char(map) == 1)
 	{
 		ft_fdprintf(2, "Error\nCharacter Not Recognized. Missinput much?\n");
 		return (1);
 	}
-	else if (check_walls(map, height) == 1 || check_exit(map) == 1
-		|| check_fill(map, height) == 2)
+	fill_res = check_fill(map, height);
+	if (fill_res == 2 || check_walls(map, height) == 1 
+		|| check_exit(map) == 1)
 		return (1);
-	else if (check_fill(map, height) == 1)
+	if (fill_res == 1 || !count_collect_cnt(map))
 	{
-		ft_fdprintf(2,
-			"Error\nCannot Access Exit or Collectible. DOOR STUCK!\n");
-		return (1);
-	}
-	else if (count_collect_cnt(map) == 0)
-	{
-		ft_fdprintf(2, "Error\nNo Collectible. Place's already clean.\n");
+		if(fill_res == 1)
+			ft_fdprintf(2, "Error\nNo access to Exit or Bags, DOOR STUCK\n");
+		else
+		 	ft_fdprintf(2, "Error\nNo Collectible, Place's already clean.\n");
 		return (1);
 	}
 	return (0);

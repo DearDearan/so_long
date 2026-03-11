@@ -1,42 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check_other.c                                      :+:      :+:    :+:   */
+/*   collect_cnt.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lifranco <lifranco@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/19 14:58:42 by lifranco          #+#    #+#             */
+/*   Created: 2026/02/19 17:46:19 by lifranco          #+#    #+#             */
 /*   Updated: 2026/03/11 17:44:25 by lifranco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-int	check_exit(char **map)
+int	count_collect_cnt(char **map)
 {
 	int	i;
 	int	j;
 	int	count;
 
 	i = 0;
-	count = 0;
-	if (!map || !*map)
-		return (1);
-	while (map[i] != NULL)
+	count = i;
+	while (map[i])
 	{
 		j = 0;
 		while (map[i][j])
 		{
-			if (map[i][j] == 'E')
+			if (map[i][j] == 'C')
 				count++;
 			j++;
 		}
 		i++;
 	}
-	if (count == 0 || count > 1)
-	{
-		ft_fdprintf(2, "Error\nNO EXIT/MORE THAN 1 EXIT. YOU CANT ESCAPE.\n");
-		return (1);
-	}
-	return (0);
+	return (count);
 }

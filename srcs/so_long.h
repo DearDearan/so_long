@@ -6,7 +6,7 @@
 /*   By: lifranco <lifranco@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/08 23:31:08 by lifranco          #+#    #+#             */
-/*   Updated: 2026/03/04 13:45:42 by lifranco         ###   ########.fr       */
+/*   Updated: 2026/03/11 17:47:01 by lifranco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@
 # include "gnl/get_next_line.h"
 # include <math.h>
 # include <fcntl.h>
-# include <stdio.h>
 # include <X11/keysym.h>
 # define T_SIZE 64
 
@@ -89,6 +88,8 @@ void	put_player_txtr(int key, t_game *game);
 /* WINDOW_C */
 int		closewin(t_game *game);
 void	my_mlx_pixel_put(t_game *game, int x, int y, int color);
+int		init_window(t_game *game);
+void	destroy_textures(t_game *game);
 
 /* HANDLER_C */
 int		key_handler(int key, t_game *game);
@@ -101,7 +102,7 @@ void	moveleft(t_game *game);
 void	moveright(t_game *game);
 void	handle(int key, t_game *game);
 
-/* ERRORS_C */
+/* COLLECT_CNT_C */
 int		count_collect_cnt(char **map);
 
 /* DRAW_C */

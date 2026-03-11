@@ -8,7 +8,7 @@
 NAME = so_long
 CC = cc
 OBJ_DIR = obj
-CFLAGS = -Wall -Wextra -Werror -I../include -Iminilibx-linux -I$(GNL_DIR) -g -fsanitize=address
+CFLAGS = -Wall -Wextra -Werror -I../include -Iminilibx-linux -I$(GNL_DIR) -g
 
 SRC = srcs/main.c \
       srcs/parsing.c \
@@ -20,7 +20,7 @@ SRC = srcs/main.c \
       srcs/window.c \
 	  srcs/handler.c \
 	  srcs/move.c \
-	  srcs/errors.c \
+	  srcs/collect_cnt.c \
       $(GNL_SRC)
 
 # OBJ

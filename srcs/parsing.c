@@ -6,7 +6,7 @@
 /*   By: lifranco <lifranco@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/08 23:32:08 by lifranco          #+#    #+#             */
-/*   Updated: 2026/03/11 15:02:24 by lifranco         ###   ########.fr       */
+/*   Updated: 2026/03/11 17:53:45 by lifranco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ static char	**fill_map(int file, int height)
 		|| check_valid(map, height) == 1)
 	{
 		if (!map)
-			ft_fdprintf(2, "Error\nMalloc Error");
+			ft_fdprintf(2, "Error\nMalloc Error\n");
 		freemap(map);
 		return (NULL);
 	}
@@ -103,13 +103,14 @@ char	**create_map(char **argv, int argv_len, t_game *game)
 	game->h = count_lines(file);
 	gnl_drain(file);
 	close(file);
+	if (!game->h)
+		return (NULL);
 	file = open_file(argv);
-	if (file < 0 || !game->h)
+	if (file < 0)
 		return (NULL);
 	map = fill_map(file, game->h);
 	if (!map)
 	{
-		freemap(map);
 		close(file);
 		return (NULL);
 	}

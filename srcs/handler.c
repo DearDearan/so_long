@@ -6,7 +6,7 @@
 /*   By: lifranco <lifranco@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/15 09:10:55 by lifranco          #+#    #+#             */
-/*   Updated: 2026/03/11 15:04:42 by lifranco         ###   ########.fr       */
+/*   Updated: 2026/03/11 17:54:08 by lifranco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ int	gamewin(t_game *game)
 {
 	ft_fdprintf(1,
 		"You cleaned the evidence, are you happy with yourself?\n");
-	ft_fdprintf(1, "You made %d moves to clean the place.", game->move_cnt + 1);
+	ft_fdprintf(1, "You made %d moves to clean the place.\n", game->move_cnt + 1);
 	closewin(game);
 	return (0);
 }
