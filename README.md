@@ -51,29 +51,19 @@ We have a few rules for those, so here's a list of all the things you need for y
 
 # Instructions
 
-First, you'll need to clone the repo:
+First, you'll need to clone the repo, then, type this in your terminal.
 
 ```bash
- git clone git@vogsphere.42angouleme.fr:vogsphere/intra-uuid-20e33fde-9499-438d-b7fc-f56cd1152017-7139729-lifranco NAMEOFDIR
+make all
 ```
 
-/!\ YOU DON'T NEED TO DOWNLOAD THE MINILIBX, ITS INSIDE THE PROJECT IN THE INCLUDE FOLDER.
-(And yes, it is allowed.)
-
-Then, type make in your terminal.
-
-```bash
-make
-```
-
-You will get a program named "so_long". You can start the game by putting in your terminal the program name, then a map of your choice im /maps.
+You will get a program named "so_long". You can start the game by putting in your terminal the program name, then a map of your choice in /maps.
 
 ```bash
 ./so_long maps/MAPOFYOURCHOICE.ber
 ```
 
-
-# Resources
+# Ressources
 
 Here's the program i used for all my sprites :
 

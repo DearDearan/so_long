@@ -6,12 +6,11 @@
 /*   By: lifranco <lifranco@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/15 00:10:41 by lifranco          #+#    #+#             */
-/*   Updated: 2026/03/11 17:44:31 by lifranco         ###   ########.fr       */
+/*   Updated: 2026/03/14 16:59:44 by lifranco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
-#include <stdlib.h>
 
 void	my_mlx_pixel_put(t_game *game, int x, int y, int color)
 {
@@ -62,7 +61,7 @@ int	init_window(t_game *game)
 	game->addr = mlx_get_data_addr(game->img, &game->bits,
 			&game->llen, &game->endian);
 	if (!game->addr)
-		return (1);	
+		return (1);
 	game->win = mlx_new_window(game->mlx, game->w * T_SIZE, game->h * T_SIZE,
 			"So long, and thanks for the corpses!");
 	if (!game->win)

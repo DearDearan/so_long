@@ -6,7 +6,7 @@
 /*   By: lifranco <lifranco@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/08 23:43:09 by lifranco          #+#    #+#             */
-/*   Updated: 2026/03/11 17:53:21 by lifranco         ###   ########.fr       */
+/*   Updated: 2026/03/14 16:59:14 by lifranco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ static int	init_game(t_game *game)
 	game->mlx = mlx_init();
 	if (!game->mlx || init_window(game) == 1)
 	{
-		ft_fdprintf(2,"Error\nCouldn't load the game! HOW?\n");
+		ft_fdprintf(2, "Error\nCouldn't load the game! HOW?\n");
 		return (1);
 	}
 	init_textures(game);

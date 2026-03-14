@@ -6,7 +6,7 @@
 /*   By: lifranco <lifranco@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/09 23:46:38 by lifranco          #+#    #+#             */
-/*   Updated: 2026/03/11 17:53:29 by lifranco         ###   ########.fr       */
+/*   Updated: 2026/03/14 17:00:18 by lifranco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -119,15 +119,15 @@ int	check_valid(char **map, int height)
 		return (1);
 	}
 	fill_res = check_fill(map, height);
-	if (fill_res == 2 || check_walls(map, height) == 1 
+	if (fill_res == 2 || check_walls(map, height) == 1
 		|| check_exit(map) == 1)
 		return (1);
 	if (fill_res == 1 || !count_collect_cnt(map))
 	{
-		if(fill_res == 1)
+		if (fill_res == 1)
 			ft_fdprintf(2, "Error\nNo access to Exit or Bags, DOOR STUCK\n");
 		else
-		 	ft_fdprintf(2, "Error\nNo Collectible, Place's already clean.\n");
+			ft_fdprintf(2, "Error\nNo Collectible, Place's already clean.\n");
 		return (1);
 	}
 	return (0);
